@@ -20,3 +20,4 @@ void modify(struct st *);
 int exit_std(struct st *);
 void reverse(struct st *);
 void sort(struct st *);
+struct st *copy_list(struct st *);
