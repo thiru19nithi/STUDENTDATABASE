@@ -2,6 +2,7 @@
 #include"student.h"
 void sort(struct st *ptr)
 {
+	struct st *t=copy_list(ptr);
 	struct st *i, *j;
 	struct st temp;
 	char sc;
@@ -20,7 +21,7 @@ void sort(struct st *ptr)
 		/* sort by name ascending */
 		case 'n':
 
-			for(i = ptr; i != 0; i = i->next)
+			for(i = t; i != 0; i = i->next)
 			{
 				for(j = i->next; j != 0; j = j->next)
 				{
@@ -38,7 +39,7 @@ void sort(struct st *ptr)
 		/* sort by mark descending */
 		case 'm':
 
-			for(i = ptr; i != 0; i = i->next)
+			for(i = t; i != 0; i = i->next)
 			{
 				for(j = i->next; j != 0; j = j->next)
 				{
@@ -56,4 +57,5 @@ void sort(struct st *ptr)
 		default:
 			printf("Invalid choice\n");
 	}
+	show(t);
 }
